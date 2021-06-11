@@ -1,13 +1,13 @@
 <div class="gh-member-import-wrapper {{if (or (eq this.state 'MAPPING') (eq this.state 'UPLOADING')) "wide"}}">
     {{#if (eq this.state 'INIT')}}
         <header class="modal-header" data-test-modal="import-members">
-            <h1>Import members</h1>
+            <h1>Import subscribers</h1>
         </header>
     {{/if}}
 
     {{#if (or (eq this.state 'MAPPING') (eq this.state 'UPLOADING'))}}
         <header class="modal-header" data-test-modal="import-members">
-            <h1>Import members</h1>
+            <h1>Import subscribers</h1>
         </header>
     {{/if}}
 
@@ -71,11 +71,11 @@
             <div class="gh-member-import-resultcontainer">
                 {{#if (eq this.importResponse.importedCount 0)}}
                 <div class="gh-member-import-result-summary">
-                    <p>No members were added{{if this.importResponse.errorCount " due to the following errors:" "."}}</p>
+                    <p>No subscribers were added{{if this.importResponse.errorCount " due to the following errors:" "."}}</p>
                 </div>
                 {{else}}
                 <div class="gh-member-import-result-summary">
-                    <p>A total of <strong>{{format-number this.importResponse.importedCount}}</strong> {{gh-pluralize this.importResponse.importedCount 'person' without-count=true}} were successfully added or updated in your list of members, and now have access to your site.</p>
+                    <p>A total of <strong>{{format-number this.importResponse.importedCount}}</strong> {{gh-pluralize this.importResponse.importedCount 'person' without-count=true}} were successfully added or updated in your list of subscribers, and now have access to your site.</p>
                 </div>
                 {{/if}}
                 {{#if this.importResponse.errorCount}}
@@ -126,7 +126,7 @@
                 {{#if this.mappingResult.membersCount}}
                     <span>Import {{format-number this.mappingResult.membersCount}} {{gh-pluralize this.mappingResult.membersCount 'member' without-count=true}}</span>
                 {{else}}
-                    <span>Import members</span>
+                    <span>Import subscribers</span>
                 {{/if}}
             </button>
         {{/if}}
@@ -151,7 +151,7 @@
                     </button>
                 {{else}}
                     <button {{action "closeModal"}} class="gh-btn gh-btn-black" data-test-button="close-import-members">
-                        <span>View members</span>
+                        <span>View subscribers</span>
                     </button>
                 {{/if}}
             {{else}}
@@ -167,7 +167,7 @@
                         <span>Upload another file</span>
                     </button>
                     <button {{action "closeModal"}} class="gh-btn gh-btn-black" data-test-button="close-import-members">
-                        <span>View members</span>
+                        <span>View subscribers</span>
                     </button>
                 {{/if}}
             {{/if}}

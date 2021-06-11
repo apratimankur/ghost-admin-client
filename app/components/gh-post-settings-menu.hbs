@@ -75,6 +75,52 @@
                 </div>
                 {{/unless}}
 
+                {{#unless this.session.user.isContributor}}
+                <div class="form-group">
+                    <label for="meta-label">Label</label>
+                    <GhTextInput
+                        @class="post-setting-meta-label"
+                        @id="meta-label"
+                        @name="post-setting-meta-label"
+                        @placeholder={{this.label}}
+                        @value={{readonly this.labelScratch}}
+                        @input={{action (mut this.labelScratch) value="target.value"}}
+                        @focus-out={{action "setMetaLabel" this.labelScratch}}
+                        @stopEnterKeyDownPropagation={{true}}
+                        data-test-field="meta-label" />
+                </div>
+                {{/unless}}
+                {{#unless this.session.user.isContributor}}
+                <div class="form-group">
+                    <label for="meta-taxon">Taxon</label>
+                    <GhTextInput
+                        @class="post-setting-meta-taxon"
+                        @id="meta-taxon"
+                        @name="post-setting-meta-taxon"
+                        @placeholder={{this.taxon}}
+                        @value={{readonly this.taxonScratch}}
+                        @input={{action (mut this.taxonScratch) value="target.value"}}
+                        @focus-out={{action "setMetaTaxon" this.taxonScratch}}
+                        @stopEnterKeyDownPropagation={{true}}
+                        data-test-field="meta-taxon" />
+                </div>
+                {{/unless}}
+                {{#unless this.session.user.isContributor}}
+                <div class="form-group">
+                    <label for="meta-usedin">Used In</label>
+                    <GhTextInput
+                        @class="post-setting-meta-usedin"
+                        @id="meta-usedin"
+                        @name="post-setting-meta-usedin"
+                        @placeholder={{this.usedIn}}
+                        @value={{readonly this.usedInScratch}}
+                        @input={{action (mut this.usedInScratch) value="target.value"}}
+                        @focus-out={{action "setMetaUsedin" this.usedInScratch}}
+                        @stopEnterKeyDownPropagation={{true}}
+                        data-test-field="meta-usedin" />
+                </div>
+                {{/unless}}
+
 
                 {{#if this.showVisibilityInput}}
                     <div class="form-group">

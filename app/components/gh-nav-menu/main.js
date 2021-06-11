@@ -116,7 +116,7 @@ export default Component.extend(ShortcutsMixin, {
             return;
         }
 
-        let iconUrl = 'https://static.ghost.org/v4.0.0/images/ghost-orb-1.png';
+        let iconUrl = 'https://static.footloose.io.s3.ap-south-1.amazonaws.com/media_assets/logos/logo_2.1.png';
 
         this.set('iconStyle', htmlSafe(`background-image: url(${iconUrl})`));
         this.set('iconClass', 'gh-nav-logo-default');

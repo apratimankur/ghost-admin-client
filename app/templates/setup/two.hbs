@@ -1,5 +1,5 @@
 <header>
-    <h1>Create your account</h1>
+    <h1>Create Super-Admin account</h1>
 </header>
 
 <form id="setup" class="gh-flow-create">
@@ -25,14 +25,14 @@
     </GhFormGroup>
 
     <GhFormGroup @errors={{this.errors}} @hasValidated={{this.hasValidated}} @property="name">
-        <label for="name">Full name</label>
+        <label for="name">Super-Admin Name</label>
         <span class="gh-input-icon gh-icon-user">
             {{svg-jar "user-circle"}}
             <GhTextInput
                 @tabindex="2"
                 @id="name"
                 @name="name"
-                @placeholder="Eg. John H. Watson"
+                @placeholder="Eg. Max Planck"
                 @autocorrect="off"
                 @autocomplete="name"
                 @value={{readonly this.name}}
@@ -44,7 +44,7 @@
     </GhFormGroup>
 
     <GhFormGroup @errors={{this.errors}} @hasValidated={{this.hasValidated}} @property="email">
-        <label for="email">Email address</label>
+        <label for="email">Super-Admin Email</label>
         <span class="gh-input-icon gh-icon-mail">
             {{svg-jar "email"}}
             <GhTextInput
@@ -52,7 +52,7 @@
                 @type="email"
                 @id="email"
                 @name="email"
-                @placeholder="Eg. john@example.com"
+                @placeholder="Eg. max@example.com"
                 @autocorrect="off"
                 @autocomplete="username email"
                 @value={{readonly this.email}}
@@ -64,7 +64,7 @@
     </GhFormGroup>
 
     <GhFormGroup @errors={{this.errors}} @hasValidated={{this.hasValidated}} @property="password">
-        <label for="password">Password</label>
+        <label for="password">Super-Admin Password</label>
         <span class="gh-input-icon gh-icon-lock">
             {{svg-jar "lock"}}
             <GhTextInput

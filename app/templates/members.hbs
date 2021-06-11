@@ -1,6 +1,6 @@
 <section class="gh-canvas">
     <GhCanvasHeader class="gh-canvas-header break tablet members-header">
-        <h2 class="gh-canvas-title" data-test-screen-title>Members</h2>
+        <h2 class="gh-canvas-title" data-test-screen-title>Subscribers</h2>
         <section class="view-actions">
             <div class="view-actions-bottom-row">
                 <GhMembersFilter
@@ -19,7 +19,7 @@
                 <div class="relative gh-members-header-search">
                     {{svg-jar "search" class="gh-input-search-icon"}}
                     <GhTextInput
-                        placeholder="Search members..."
+                        placeholder="Search subscribers..."
                         @value={{this.searchText}}
                         @input={{this.search}}
                         class="gh-members-list-searchfield {{if this.searchText "active"}}" />
@@ -46,34 +46,34 @@
                     >
                         <li>
                             <LinkTo @route="members.import" class="mr2" data-test-link="import-csv">
-                                <span>Import members</span>
+                                <span>Import subscribers</span>
                             </LinkTo>
                         </li>
                         <li class="{{if this.members.length "" "disabled"}}">
                             {{#if this.members.length}}
                                 <button class="mr2" {{on "click" this.exportData}}>
                                     {{#if this.showingAll}}
-                                        <span>Export all members</span>
+                                        <span>Export all subscribers</span>
                                     {{else}}
-                                    <span>Export selected members ({{this.members.length}})</span>
+                                    <span>Export selected subscribers ({{this.members.length}})</span>
                                     {{/if}}
                                 </button>
                             {{else}}
                                 <button class="mr2" disabled="true">
-                                    <span>Export selected members (0)</span>
+                                    <span>Export selected subscribers (0)</span>
                                 </button>
                             {{/if}}
                         </li>
                         {{#if (and this.members.length this.isFiltered)}}
                             <li>
                                 <button class="mr2" {{on "click" this.toggleDeleteMembersModal}} data-test-button="delete-selected">
-                                    <span class="red">Delete selected members ({{this.members.length}})</span>
+                                    <span class="red">Delete selected subscribers ({{this.members.length}})</span>
                                 </button>
                             </li>
                         {{/if}}
                     </GhDropdown>
                 </span>
-                <LinkTo @route="member.new" class="gh-btn gh-btn-primary" data-test-new-member-button="true"><span>New member</span></LinkTo>
+                <LinkTo @route="member.new" class="gh-btn gh-btn-primary" data-test-new-member-button="true"><span>New subscriber</span></LinkTo>
             </div>
         </section>
     </GhCanvasHeader>
@@ -103,10 +103,10 @@
                             <div class="no-posts">
                                 {{svg-jar "members-placeholder" class="gh-members-placeholder"}}
                                 {{#if this.showingAll}}
-                                    <h3>No members yet</h3>
+                                    <h3>No subscribers yet</h3>
                                     <GhMembersNoMembers @afterCreate={{this.refreshData}} />
                                 {{else}}
-                                    <h3>No members match the current filter</h3>
+                                    <h3>No subscribers match the current filter</h3>
                                 {{/if}}
                             </div>
                         </li>

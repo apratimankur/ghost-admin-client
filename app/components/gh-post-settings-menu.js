@@ -215,6 +215,75 @@ export default Component.extend(SettingsMenuMixin, {
             });
         },
 
+        setMetaLabel(metaLabel) {
+            // Grab the post and current stored meta title
+            let post = this.post;
+            let currentLabel = post.get('metaLabel');
+
+            // If the title entered matches the stored meta title, do nothing
+            if (currentLabel === metaLabel) {
+                return;
+            }
+
+            // If the title entered is different, set it as the new meta title
+            post.set('label', metaLabel);
+
+            // Make sure the meta title is valid and if so, save it into the post
+            return post.validate({property: 'label'}).then(() => {
+                if (post.get('isNew')) {
+                    return;
+                }
+
+                return this.savePost.perform();
+            });
+        },
+
+        setMetaTaxon(metaTaxon) {
+            // Grab the post and current stored meta title
+            let post = this.post;
+            let currentTaxon = post.get('metaTaxon');
+
+            // If the title entered matches the stored meta title, do nothing
+            if (currentTaxon === metaTaxon) {
+                return;
+            }
+
+            // If the title entered is different, set it as the new meta title
+            post.set('taxon', metaTaxon);
+
+            // Make sure the meta title is valid and if so, save it into the post
+            return post.validate({property: 'taxon'}).then(() => {
+                if (post.get('isNew')) {
+                    return;
+                }
+
+                return this.savePost.perform();
+            });
+        },
+
+        setMetaUsedin(metaUsedin) {
+            // Grab the post and current stored meta title
+            let post = this.post;
+            let currentUsedin = post.get('metaUsedin');
+
+            // If the title entered matches the stored meta title, do nothing
+            if (currentUsedin === metaUsedin) {
+                return;
+            }
+
+            // If the title entered is different, set it as the new meta title
+            post.set('used_in', metaUsedin);
+
+            // Make sure the meta title is valid and if so, save it into the post
+            return post.validate({property: 'used_in'}).then(() => {
+                if (post.get('isNew')) {
+                    return;
+                }
+
+                return this.savePost.perform();
+            });
+        },
+
         setMetaDescription(metaDescription) {
             // Grab the post and current stored meta description
             let post = this.post;

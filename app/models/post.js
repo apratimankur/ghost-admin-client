@@ -99,6 +99,9 @@ export default Model.extend(Comparable, ValidationEngine, {
     plaintext: attr('string'),
     publishedAtUTC: attr('moment-utc'),
     slug: attr('string'),
+    label: attr('string', {defaultValue: ''}), //added new
+    taxon: attr('string', {defaultValue: ''}), //added new
+    usedIn: attr('string', {defaultValue: ''}), //added new
     status: attr('string', {defaultValue: 'draft'}),
     title: attr('string', {defaultValue: ''}),
     updatedAtUTC: attr('moment-utc'),
