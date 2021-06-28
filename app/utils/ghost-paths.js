@@ -15,10 +15,11 @@ let makeRoute = function (root, args) {
 
 export default function () {
     let path = window.location.pathname;
-    let subdir = path.substr(0, path.search('/ghost/'));
-    let adminRoot = `${subdir}/ghost/`;
-    let assetRoot = `${subdir}/ghost/assets/`;
-    let apiRoot = `${subdir}/ghost/api/canary/admin`;
+    let adminPathName = 'ghost';
+    let subdir = path.substr(0, path.search(`/${adminPathName}/`));
+    let adminRoot = `${subdir}/${adminPathName}/`;
+    let assetRoot = `${subdir}/${adminPathName}/assets/`;
+    let apiRoot = `${subdir}/${adminPathName}/api/canary/admin`;
 
     function assetUrl(src) {
         return subdir + src;
